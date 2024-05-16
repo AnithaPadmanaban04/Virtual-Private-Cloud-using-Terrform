@@ -154,7 +154,7 @@ terraform apply
 
 # Public Subnets inside VPC
 
-Create public subnets in availability zone us-east-1a and us-east-1b
+2 public subnets will be created in availability zone us-east-1a and us-east-1b
 
 ```hcl
 # Public subnet
@@ -174,7 +174,7 @@ resource "aws_subnet" "public_subnet" {
 
 # Private Subnets inside VPC
 
-Create private subnets in availability zone us-east-1a and us-east-1b
+2 private subnets will be created in availability zone us-east-1a and us-east-1b
 
 ```hcl
 # Private Subnet
@@ -194,6 +194,8 @@ resource "aws_subnet" "private_subnet" {
 
 # Create Internet Gateway for our VPC
 
+Create Internet Gateway and attach it to out VPC to get internet access 
+
 ```hcl
 #Internet gateway
 resource "aws_internet_gateway" "ig" {
@@ -210,6 +212,8 @@ resource "aws_internet_gateway" "ig" {
 ![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/983f985e-f1b4-44d1-a1f6-52796ac6a567)
 
 # Create EIP and NAT-Gateway 
+
+Create a NAT Gateway in the public subnet and attach it to the private subnets using the route tables, so the private subnets can access the internet.
 
 ```hcl
 # Elastic-IP (eip) for NAT
