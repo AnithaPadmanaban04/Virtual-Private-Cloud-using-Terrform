@@ -124,7 +124,7 @@ variable "instance_type" {
 
 Let’s start defining the VPC and related components inside the necessary architecture.
 
-# 1. Create a VPC	
+# Create a VPC	
 
 ```hcl
 #Create VPC
