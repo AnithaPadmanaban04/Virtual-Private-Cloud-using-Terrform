@@ -312,6 +312,12 @@ resource "aws_route_table_association" "private" {
 
 ![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/488ff470-55be-4ded-a172-63e0d9eae069)
 
+Finally destroy all resources created using the command
+
+```hcl
+terraform destroy
+```
+
 
 
 
