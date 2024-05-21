@@ -12,12 +12,11 @@ This project aims to automate the creation of a Virtual Private Cloud (VPC) infr
 
 ## Architecture Diagram
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/20773332-d372-41e6-afb3-d910438b1b95)
-
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/e903310b-5e33-43ef-89d9-2d453cc29416)
 
 ## Project Components:
 
-**AWS Provider:** Configures Terraform to use AWS as the cloud provider and specifies the desired region (us-west-2 in this example).
+**AWS Provider:** Configures Terraform to use AWS as the cloud provider and specifies the desired region (us-east-1 in this example).
 
 **VPC (aws_vpc):** Defines the VPC with a specified CIDR block (172.16.0.0/16 in this example).
 
@@ -39,7 +38,7 @@ This project aims to automate the creation of a Virtual Private Cloud (VPC) infr
 
 Create a folder for our terraform project where we can keep all the configurations related to our terraform environment.
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/4a08b8f0-8856-4dc1-8cc5-f855b2cd23f5)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/1acd0974-c2cf-4c48-975f-7cce53bc996c)
 
 ### Provider Configuration
 Create a provider file to denote Terraform which cloud platform we are going to use and specify which version of HCL syntax we are going to work with. In addition to that specify the cloud region.
@@ -66,7 +65,7 @@ Then run the following command to initiate terraform in this directory.
 terraform init
 ```
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/70198059-939b-4e43-a5a3-9c59a4dffdaf)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/334ac05a-33aa-4690-a640-9c5f5b4e9322)
 
 ### Define input variables for Terraform
 
@@ -146,11 +145,13 @@ terraform plan
 terraform apply
 ```
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/6d9e2c47-e8cd-48ba-a094-76f5c87c2250)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/249382ae-354a-4a31-b485-9aad93d26e51)
 
-| Architecture | VPC Dashboard Showing newly created VPC with Terraform |
-| ------------ | ------------------------------------------------------ |
-| ![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/b6588b92-87a9-4caf-934b-a9cb9a33ba44) | ![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/10a34600-6524-49f5-947d-befbd09f9a3b)
+
+VPC Dashboard Showing newly created VPC with Terraform 
+
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/61104e3d-32e2-41d8-9e7d-735c25c74c09)
+
 
 # Public Subnets inside VPC
 
@@ -209,7 +210,8 @@ resource "aws_internet_gateway" "ig" {
 
 **Architecture So far**
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/983f985e-f1b4-44d1-a1f6-52796ac6a567)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/3efe3d55-5f04-4617-b457-102c21dfcf4d)
+
 
 # Create EIP and NAT-Gateway 
 
@@ -240,11 +242,13 @@ To verify the configuration run Terraform apply command to check
 terraform apply –auto-approve
 ```
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/758649d7-a413-4eb0-b809-5c25ecf0b345)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/b531dd4a-5b08-4f79-a09c-8e4a16415142)
+
 
 **VPC Resource map with internet gateway, public, private subnets and NAT gateway**
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/45c7400b-dc52-4e6a-b865-7099c7dc719a)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/b6957396-e1cd-4d96-89c5-4d0081299c0d)
+
 
 # Create Route tables for private and public subnets
 
@@ -314,7 +318,7 @@ resource "aws_route_table_association" "private" {
 
 **VPC Resource map with public subnets associated with Public route table and Internet gateway, private subnets associated with private route table and nat gateway** 
 
-![image](https://github.com/aniwardhan/Virtual-Private-Cloud/assets/80623694/488ff470-55be-4ded-a172-63e0d9eae069)
+![image](https://github.com/AnithaPadmanaban04/Virtual-Private-Cloud-using-Terrform/assets/170385807/bdcfbb28-6d34-462b-b258-d2088d82af98)
 
 Finally destroy all resources created using the command
 
